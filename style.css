@@ -1,0 +1,289 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-image: url(./img/background.jpg);
+    animation: bgAnimation 1000s infinite linear;
+}
+
+@keyframes bgAnimation {
+    0% {
+        background-position: top left;
+    }
+
+    25% {
+
+        background-position: top right;
+
+
+    }
+
+    50% {
+        background-position: bottom right;
+
+
+
+    }
+
+    75% {
+        background-position: bottom left;
+
+    }
+
+    100% {
+        background-position: top left;
+    }
+
+
+}
+
+.rounded {
+
+    border-radius: 20px;
+    margin-bottom: 10px;
+    padding: 5px;
+    background-color: rgba(230, 230, 230, 0.5);
+}
+
+.darkBg {
+    border-radius: 20px;
+    padding: 5px;
+    background-color: rgba(200, 200, 200, 0.3);
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#themeChange {
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+
+}
+
+nav {
+    display: flex;
+    padding: 10px 10px !important;
+    gap: 5px;
+
+}
+
+nav a {
+    color: black;
+    font-size: 18px;
+    text-decoration: none;
+    border-radius: 20px;
+    padding: 6px 20px;
+}
+
+.active {
+    background-color: orange;
+    color: white;
+    font-weight: 700;
+}
+
+.search {
+    display: flex;
+    gap: 10px;
+}
+
+.search input {
+    flex-grow: 1;
+    border-radius: 8px;
+    border: none;
+    outline: none;
+
+}
+
+#searchBtn {
+    cursor: pointer;
+    font-size: 18px;
+}
+
+.movieTitle {
+    text-align: center;
+    font-size: 25px;
+    padding: 10px;
+    font-weight: 700;
+    margin-bottom: 10px;
+   
+
+}
+
+.movie {
+    display: none;
+    justify-content: space-between;
+    gap: 0 10px;
+    margin-bottom: 10px;
+   
+}
+
+#movieImg {
+    width: 300px;
+    height: 400px;
+    background-image: url(./img/film2.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: cover;
+    border-radius:10px;
+    position: relative;
+    
+
+}
+
+.movieDescription {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+}
+.desc{
+    border-radius: 10px;
+    background-color:rgba(73, 60, 60, 0.1);
+    padding: 6px 12px;
+    display: flex;
+}
+.desc span{
+    width: 50%;
+}
+.similarMovie {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 20px;
+
+    
+}
+.saved.active {
+    background-color: orange; /* Жёлтый цвет */
+    filter: invert(100%); /* Инверсия цвета иконки для визуального эффекта */
+}
+.similarMovieCards{
+    background-image:url(./img/film3.jpg);
+    height: 600px;
+    background-repeat:no-repeat;
+    background-size: cover;
+    background-position:center;
+    border-radius: 10px;
+    display: flex;
+    align-items:flex-end;
+    position: relative;
+    
+    
+
+}
+.similarMovieTitle{
+    text-align: center;
+    font-size: 25px;
+    font-weight: 700;
+    background-color:rgba(220, 220, 220, 0.256);
+    width: 100%;
+    padding: 20px 0;
+    border-radius: 0 0 10px 10px;
+    display: none;
+
+}
+
+.saved {
+    width: 50px;
+    height: 50px;
+    background-color:rgba(210, 210, 210, 0.8);
+    border-radius: 6px;
+    background-image:url(./img/favBtn.svg);
+    background-repeat:no-repeat; 
+    background-size: 90%;
+    background-position:center;
+    cursor:pointer;
+    position: absolute;
+    top: 15px;
+    left:15px;
+}
+
+
+.loader {
+    display: none;
+    height: 14px;
+    --c: no-repeat linear-gradient(#000 0 0);
+    background: var(--c),var(--c),#fff;
+    background-size: 60% 100%;
+    animation: l16 3s infinite;
+}
+@keyframes l16 {
+    0%   {background-position:-150% 0,-150% 0}
+    66%  {background-position: 250% 0,-150% 0}
+    100% {background-position: 250% 0, 250% 0}
+}
+
+
+.favoritsCards{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 20px;
+    
+    
+}
+.favoritsCard {
+    height: 600px;
+    background-repeat:no-repeat;
+    background-size: cover;
+    background-position:center;
+    border-radius: 10px;
+    display: flex;
+    align-items:flex-end;
+    position: relative;
+    
+}
+.favoritTitle{
+    text-align: center;
+    font-size: 25px;
+    font-weight: 700;
+    background-color:rgba(220, 220, 220, 0.256);
+    width: 100%;
+    padding: 20px 0;
+    border-radius: 0 0 10px 10px;
+    
+}
+/*Теная тема */
+.dark .rounded {
+    background-color: rgba(15, 15, 15, 0.3);
+}
+.dark .darkBg {
+    background-color: rgba(100, 100, 100, 0.3);
+}
+#themeChange {
+    transition: transform .5s ease, filter .5s ease;
+}
+.dark #themeChange {
+    transform: rotate(180deg);
+    filter: invert(100%);
+}
+.dark .saved {
+    background-color:rgba(110, 110, 110, 0.8);
+    filter: invert(100%);
+}
+
+
+
+@media(max-width:720px) {
+    .similarMovie {
+        grid-template-columns: 1fr;
+    }
+
+    #themeChange {
+       position: relative;
+       right: 15px
+    }
+    .favoritsCards {
+        grid-template-columns: 1fr;
+    }
+   nav a{
+    padding: 2px;
+   }
+   
+}

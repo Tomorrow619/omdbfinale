@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <header class="rounded">
+        <h1>Кинопоиск</h1>
+        <nav class="darkBg">
+            <a href="/" class="active">Главная</a>
+            <a href="./favorites.html">Избранное</a>
+
+        </nav>
+        <img src="./img/themeChange.svg" alt="themeChange" id="themeChange" />
+    </header>
+    <div class="search rounded">
+        <input type="text" class="darkBg" name="search">
+        <button class="darkBg" id="searchBtn">Поиск</button>
+    </div>
+
+    <div class="loader rounded"></div>
+
+    <div class="main rounded">
+        <div class="movieTitle darkBg"></div>
+        <div class="movie darkBg">
+            <div id="movieImg">
+                <div class="saved"></div>
+            </div>
+            <div class="movieDescription">
+              
+
+            </div>
+
+        </div>
+        <div class="movieTitle darkBg"></div>
+        <div class="similarMovie">
+
+        </div>
+
+
+
+
+        <script src="./script.js"></script>
+</body>
+
+</html>
